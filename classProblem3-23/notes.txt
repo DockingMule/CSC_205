@@ -1,0 +1,1 @@
+Using cin.ignore() to bypass the null value of a previous input being used as the next input.
