@@ -1,0 +1,1 @@
+Using static_cast() in order to cast.

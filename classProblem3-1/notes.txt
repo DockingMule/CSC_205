@@ -1,0 +1,2 @@
+First time using cin for inputs, along wiht cout for outputs.
+#include <iostream> is required to use cin or cout

@@ -1,0 +1,3 @@
+Using getline(); to input up to end of line rather than first space.
+One use for this would be for a fuul name, Firstname Lastname. Instead of ending
+at the space of Firstname leaving out lastName.
