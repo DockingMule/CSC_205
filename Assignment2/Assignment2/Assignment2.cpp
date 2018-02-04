@@ -27,8 +27,8 @@ int main()
 	cout << setprecision(2) << fixed << showpoint;
 	cout << left << setw(30) << "Interest Rate:" << right <<setw(29) << rate << right << setw(1) << "%" << endl;
 	cout << left << setw(30) << "Times Compounded:" << right << setw(30) << t << endl;
-	cout << left << setw(30) << "Principal:" << right << setw(30) << principal << endl << endl;
-	cout << left << setw(30) << "Interest Amount:" << right << setw(30) << interestAmount << endl;
+	cout << left << setw(30) << "Principal:" << right << setw(30-sizeof(principal)) << "$ " << right << setw(sizeof(principal)) << principal << endl << endl;
+	cout << left << setw(30) << "Principal:" << right << setw(30 - sizeof(principal)) << "$ " << right << setw(sizeof(principal)) << principal << endl << endl;
 	cout << left << setw(30) << "Total Amount:" << right << setw(30) << totalAmount << endl;
 
 
