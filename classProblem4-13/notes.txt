@@ -1,0 +1,2 @@
+using system("cls"); to clear the output screen in the middle of the program to make it look cleaner.
+also using bool to declare as true and false.
