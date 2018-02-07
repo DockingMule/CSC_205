@@ -1,0 +1,1 @@
+Shows how to allow for multiple inpots to use the same output. Ex: a and A for one output.
