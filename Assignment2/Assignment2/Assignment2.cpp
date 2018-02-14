@@ -12,7 +12,7 @@ int main()
 {
 	//declare variables
 	double principal, rate, totalAmount, interestAmount;
-	int t;									// t is the amount of times the intrest is compounded per year
+	int t;		// t is the amount of times the intrest is compounded per year
 	//inputs
 	cout << "Enter the principal amount          : ";
 	cin >> principal; 
