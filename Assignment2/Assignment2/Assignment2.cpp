@@ -24,19 +24,16 @@ int main()
 	totalAmount = principal * pow((1 + rate / 100 / t), t);
 	interestAmount = totalAmount - principal;
 	// outputs
-	cout << "----------------------" << endl;
+	system("cls");
 	cout << setprecision(2) << fixed << showpoint;
-	cout << left << setw(30) << "Interest Rate:" << right <<setw(29) << rate << right << setw(1) << "%" << endl;
-	cout << left << setw(30) << "Times Compounded:" << right << setw(30) << t << endl;
+	cout << left << setw(60) << "Interest Rate:" << right << rate << "%" << endl;
+	cout << left << setw(60) << "Times Compounded:" << right <<  t << endl;
 	//principal output
-	cout << left << setw(30) << "Principal:" << right << setw(30-sizeof(principal)) << "$ " <<
-		right << setw(sizeof(principal)) << principal << endl << endl;
+	cout << left << setw(60) << "Principal:" << right << "$ " << principal << endl << endl;
 	//interest Amount output
-	cout << left << setw(30) << "Interest Amount:" << right << setw(30 - sizeof(interestAmount)) << "$ " <<
-		right << setw(sizeof(interestAmount)) << interestAmount << endl;
+	cout << left << setw(60) << "Interest Amount:" << right << "$ " << interestAmount << endl;
 	//total Amount output
-	cout << left << setw(30) << "Total Amount:" << right << setw(30 - sizeof(totalAmount)) << "$ " <<
-		right << setw(sizeof(totalAmount)) << totalAmount << endl;
+	cout << left << setw(60) << "Total Amount:" << right << "$ " << totalAmount << endl;
 
 
 
