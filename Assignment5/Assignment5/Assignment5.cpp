@@ -58,7 +58,7 @@ void getData(double &time) {
 //using inputed time value
 double fallingDistance(double time) {
 	double distance;
-	distance = .5 * (g * pow(time,2));
+	distance = (g * pow(time,2))/2;
 	return distance;
 }
 
