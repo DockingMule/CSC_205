@@ -16,14 +16,14 @@ double findAverage(const int[], int);
 void getData(string[], int[], int);
 void calculate(const int[], int[], int[], int, int);
 int findHigh(const string[], const int[], int);
-void display(string[], int[], int[], int[], int, int, int);
+void display(string[], int[], int[], int[], double, int, int);
 
 int main()
 {
 	//declare variables
-	const int NUM_STUDENTS = 5;
+	const int NUM_STUDENTS = 4;
 	const int NUM_Q = 50;
-	int average;
+	double average;
 	int high;
 
 	//declare arrays
@@ -70,11 +70,11 @@ void calculate(const int correct[], int incorrect[], int score[], int NUM_Q, int
 
 double findAverage(const int score[], int NUM_STUDENTS) {
 	double average;
-	int scoreSum;
+	int sum = 0;
 	for (int i = 0; i < NUM_STUDENTS; i++) {
-		scoreSum += score[i];
+		sum += score[i];
 	}
-	average = (scoreSum / NUM_STUDENTS);
+	average = (sum / NUM_STUDENTS);
 	return average;
 }
 
@@ -91,15 +91,32 @@ int findHigh(const string id[], const int score[], int NUM_STUDENTS) {
 
 //------------------------NEW-FUNCTION------------------------------------
 
-void display(string id[], int correct[], int incorrect[], int score[], int average, int high, int NUM_STUDENTS)
+void display(string id[], int correct[], int incorrect[], int score[], double average, int high, int NUM_STUDENTS)
 {
-	// Display each employee's gross pay.
+	//Display Grades
 	system("cls");
 	cout << fixed << showpoint << setprecision(2);
-	cout << "ID       Correct Answers     Incorrect Answers       Score" << endl << endl;
-	for (int index = 0; index < NUM_STUDENTS; index++)
-		cout << id[index] << setw(8) << correct[index] << setw(12) << incorrect[index]
-		<< setw(8) << score[index] << endl;
+	cout <<left << setw(13) <<"ID" << setw(20) << "Correct Answers" << 
+		setw(20) << "Incorrect Answers"<< setw(20) << "Score" << endl << endl;
+	for (int index = 0; index < NUM_STUDENTS; index++) {
+		cout << left << setw(20) << id[index] << setw(21) << correct[index] << setw(12) << incorrect[index]
+			<< setw(10) << score[index] << endl;
+	}
+
+	//Display highest and average grades
+	cout << endl << "Test Score Average       : " << average << endl;
+	cout << "Highest Test Score       : " << high << endl << endl;
+
+	//Display all grades over 80 and ID's
+	cout << "         Scores above 80" << endl << endl;
+	cout << "         ID          Score" << endl << endl;
+	for (int i = 0; i < NUM_STUDENTS; i++) {
+		if (score[i] > 80) {
+			cout << "         " << id[i] << "        " << score[i] << endl;
+		}
+	}
+
+	cout << endl;
 
 	return;
 }
