@@ -18,6 +18,7 @@ void calculate(const int[], int[], int[], int, int);
 int findHigh(const string[], const int[], int);
 void display(string[], int[], int[], int[], double, int, int);
 
+//-----------------------MAIN-FUNCTION------------------------------------
 int main()
 {
 	//declare variables
@@ -37,13 +38,14 @@ int main()
 	average = findAverage(score, NUM_STUDENTS);
 	high = findHigh(id, score, NUM_STUDENTS);
 	display(id, correct, incorrect, score, average, high, NUM_STUDENTS);
-
+	cout << endl;
 
 	return 0;
 }
 
 //------------------------NEW-FUNCTION------------------------------------
 
+//gain students ID and number of correct answers from user
 void getData(string id[], int correct[], int NUM_STUDENTS) {
 	cout << "Enter ID's for " << NUM_STUDENTS
 		<< " students and the amount of questions correct on test.\n";
@@ -58,6 +60,7 @@ void getData(string id[], int correct[], int NUM_STUDENTS) {
 
 //------------------------NEW-FUNCTION------------------------------------
 
+//calculate each students score and amount of questions wrong
 void calculate(const int correct[], int incorrect[], int score[], int NUM_Q, int NUM_STUDENTS) {
 	for (int i = 0; i < NUM_STUDENTS; i++) {
 		incorrect[i] = (NUM_Q - correct[i]);
@@ -68,6 +71,7 @@ void calculate(const int correct[], int incorrect[], int score[], int NUM_Q, int
 
 //------------------------NEW-FUNCTION------------------------------------
 
+//calulate the class average test grade
 double findAverage(const int score[], int NUM_STUDENTS) {
 	double average;
 	int sum = 0;
@@ -80,6 +84,7 @@ double findAverage(const int score[], int NUM_STUDENTS) {
 
 //------------------------NEW-FUNCTION------------------------------------
 
+//Find the highest grade in the class
 int findHigh(const string id[], const int score[], int NUM_STUDENTS) {
 	int highScore = 0;
 	for (int i = 0; i < NUM_STUDENTS; i++) {
@@ -91,9 +96,11 @@ int findHigh(const string id[], const int score[], int NUM_STUDENTS) {
 
 //------------------------NEW-FUNCTION------------------------------------
 
-void display(string id[], int correct[], int incorrect[], int score[], double average, int high, int NUM_STUDENTS)
-{
-	//Display Grades
+//final outputs
+void display(string id[], int correct[], int incorrect[], int score[],
+	double average, int high, int NUM_STUDENTS){
+
+	//Display Grades of each student
 	system("cls");
 	cout << fixed << showpoint << setprecision(2);
 	cout <<left << setw(13) <<"ID" << setw(20) << "Correct Answers" << 
@@ -108,15 +115,12 @@ void display(string id[], int correct[], int incorrect[], int score[], double av
 	cout << "Highest Test Score       : " << high << endl << endl;
 
 	//Display all grades over 80 and ID's
-	cout << "         Scores above 80" << endl << endl;
-	cout << "         ID          Score" << endl << endl;
+	cout << setw(10) << " " << "Scores above 80" << endl << endl;
+	cout << setw(10) << " " << setw(10) << "ID" << setw(10) << "Score" << endl << endl;
 	for (int i = 0; i < NUM_STUDENTS; i++) {
 		if (score[i] > 80) {
-			cout << "         " << id[i] << "        " << score[i] << endl;
+			cout <<setw(10) << " " << setw(10) << id[i] << setw(10) << score[i] << endl;
 		}
 	}
-
-	cout << endl;
-
 	return;
 }
