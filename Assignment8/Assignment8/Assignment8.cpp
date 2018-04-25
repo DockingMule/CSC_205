@@ -17,6 +17,7 @@ struct incomeInfo {
 	double bonus;
 	double totPay;
 };
+
 //---------Prototypes----------------------------------------------
 void getIncome(incomeInfo[], int);
 void compute(incomeInfo[], int);
@@ -67,8 +68,8 @@ void getIncome(incomeInfo employee[], int NUM_EMPS){
 void compute(incomeInfo employee[], int NUM_EMPS){  //total pay with bonus
 	for (int index = 0; index < NUM_EMPS; index++)
 		employee[index].totPay = employee[index].pay + employee[index].bonus;
-
 }
+
 //---------New-Function--------------------------------------------
 double payroll(incomeInfo employee[], int NUM_EMPS) {
 	double payroll = 0;
